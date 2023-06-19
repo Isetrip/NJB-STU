@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="MobileOptimized" content="176" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>info</title>
+  <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+
+  <script src="scripts/lang.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--tg-theme-bg-color);
+      color: var(--tg-theme-text-color);
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 20%;
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto Medium", sans-serif;
+      justify-content: flex-start;
+      padding: 10px;
+      border-bottom: 1px solid #CCE0FF;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .container img {
+      margin-right: 10px;
+      width: 70px;
+      border-radius: 50%;
+      margin-top: -20px;
+    }
+
+    .container p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="center">
+  <div class="container">
+    <img src="images/language.png">
+    <p id="lang-one">rule</p>
+  </div>
+  <div class="container">
+    <img src="images/payment.png">
+    <p id="lang-two">rule</p>
+  </div>
+  <div class="container">
+    <img src="images/anon.png">
+    <p id="lang-three">rule</p>
+  </div>
+  <div class="container">
+    <img src="images/test.png">
+    <p id="lang-four">rule</p>
+  </div>
+  <div class="container">
+    <img src="images/test_1.png">
+    <p id="lang-five">rule</p>
+  </div>
+</div>
+
+<script>
+
+  const tg = Telegram.WebApp;
+
+  function setThemeClass() {
+    document.documentElement.className = Telegram.WebApp.colorScheme;
+  }
+  tg.onEvent('themeChanged', setThemeClass);
+  setThemeClass();
+
+</script>
+
+</body>
+</html>
